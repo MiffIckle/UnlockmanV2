@@ -113,7 +113,7 @@ public class UnlockPlugin extends Plugin
 	@Override
 	protected void shutDown() throws Exception
 	{
-		chatCommandManager.unregisterCommand(CHUNK_COMMAND);
+		//chatCommandManager.unregisterCommand(CHUNK_COMMAND);
 		overlayManager.remove(regionLockerOverlay);
 		overlayManager.remove(regionBorderOverlay);
 		//keyManager.unregisterKeyListener(inputListener);
