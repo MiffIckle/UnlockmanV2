@@ -103,6 +103,22 @@ public interface UnlockConfig extends Config
 
 	@ConfigSection(
 			position = 11,
+			name = "Utility Unlocks - in Descriptions",
+			description = "Requirements for Utility",
+			closedByDefault = true
+	)
+	String utilityUnlocks = "utilityUnlocks";
+
+	@ConfigSection(
+			position = 12,
+			name = "Gear Slots - in Descriptions",
+			description = "Requirements for Gear Slots",
+			closedByDefault = true
+	)
+	String gearSlots = "gearSlots";
+
+	@ConfigSection(
+			position = 13,
 			name = "Map Overlay",
 			description = "Configurable region lock",
 			closedByDefault = true
@@ -292,7 +308,7 @@ public interface UnlockConfig extends Config
 
 	@ConfigItem(
 			keyName = "AsgarniaMining",
-			name = "Mining (Level 45)",
+			name = "Mining (Level 40)",
 			description = "Check if you have the Mining requirement for Asgarnia",
 			position = 16,
 			section = regionAsgarnia
@@ -304,7 +320,7 @@ public interface UnlockConfig extends Config
 
 	@ConfigItem(
 			keyName = "AsgarniaSmithing",
-			name = "Smithing (Level 40)",
+			name = "Smithing (Level 35)",
 			description = "Check if you have the Smithing requirement for Asgarnia",
 			position = 17,
 			section = regionAsgarnia
@@ -316,7 +332,7 @@ public interface UnlockConfig extends Config
 
 	@ConfigItem(
 			keyName = "AsgarniaCombat",
-			name = "Smithing (Level 50)",
+			name = "Combat (Level 45)",
 			description = "Check if you have the Combat requirement for Asgarnia",
 			position = 19,
 			section = regionAsgarnia
@@ -507,69 +523,581 @@ public interface UnlockConfig extends Config
 		return false;
 	}
 
-
-
 	@ConfigItem(
-			keyName = "renderMorytania",
-			name = "Morytania",
-			description = "Check if you have unlocked Morytania",
-			position = 19,
-			section = regionMorytania
-	)
-	default boolean renderMorytania()
-	{
-		return false;
-	}
-
-	@ConfigItem(
-			keyName = "renderFremennik",
-			name = "Fremennik",
-			description = "Check if you have unlocked Fremennik",
-			position = 20,
+			keyName = "FremennikMagic",
+			name = "Magic (Level 70)",
+			description = "Check if you have the Magic requirement for Fremennik",
+			position = 35,
 			section = regionFremennik
 	)
-	default boolean renderFremennik()
+	default boolean FremennikMagic()
 	{
 		return false;
 	}
 
-
-
 	@ConfigItem(
-			keyName = "renderKourend",
-			name = "Kourend & Kebos",
-			description = "Check if you have unlocked Kourend & Kebos",
-			position = 22,
-			section = regionKourend
+			keyName = "FremennikCombat",
+			name = "Combat (Level 80)",
+			description = "Check if you have the Combat requirement for Fremennik",
+			position = 36,
+			section = regionFremennik
 	)
-	default boolean renderKourend()
+	default boolean FremennikCombat()
 	{
 		return false;
 	}
 
 	@ConfigItem(
-			keyName = "renderVarlamore",
-			name = "Varlamore",
-			description = "Check if you have unlocked Varlamore",
-			position = 23,
+			keyName = "FremennikFishing",
+			name = "Fishing (Level 76)",
+			description = "Check if you have the Fishing requirement for Fremennik",
+			position = 37,
+			section = regionFremennik
+	)
+	default boolean FremennikFishing()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+			keyName = "VarlamoreQuest",
+			name = "Children of the Sun",
+			description = "Check if you have the quest requirement for Varlamore",
+			position = 38,
 			section = regionVarlamore
 	)
-	default boolean renderVarlamore()
+	default boolean VarlamoreQuest()
 	{
 		return false;
 	}
 
 	@ConfigItem(
-			keyName = "renderWilderness",
-			name = "Wilderness",
-			description = "Check if you have unlocked Wilderness",
-			position = 22,
-			section = regionWilderness
+			keyName = "VarlamoreHunter",
+			name = "Hunter (Level 45)",
+			description = "Check if you have the Hunter requirement for Varlamore",
+			position = 39,
+			section = regionVarlamore
 	)
-	default boolean renderWilderness()
+	default boolean VarlamoreHunter()
 	{
 		return false;
 	}
+
+	@ConfigItem(
+			keyName = "VarlamoreThieving",
+			name = "Thieving (Level 45)",
+			description = "Check if you have the Thieving requirement for Varlamore",
+			position = 40,
+			section = regionVarlamore
+	)
+	default boolean VarlamoreThieving()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+			keyName = "VarlamoreHunterdoom",
+			name = "Doom Hunter (Level 90)",
+			description = "Check if you have the Hunter (x2) requirement for Varlamore (in case Varlamore belongs to the last two Tier 1 Regions",
+			position = 41,
+			section = regionVarlamore
+	)
+	default boolean VarlamoreHunterDoom()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+			keyName = "VarlamoreThievingdoom",
+			name = "Doom Thieving (Level 90)",
+			description = "Check if you have the Thieving (x2) requirement for Varlamore (in case Varlamore belongs to the last two Tier 1 Regions",
+			position = 42,
+			section = regionVarlamore
+	)
+	default boolean VarlamoreThievingDoom()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+			keyName = "KourendQuest",
+			name = "X Marks the Spot",
+			description = "Check if you have the Quest requirement for Kourend & Kebos",
+			position = 43,
+			section = regionKourend
+	)
+	default boolean KourendQuest()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+			keyName = "KourendFiremaking",
+			name = "Firemaking (Level 70)",
+			description = "Check if you have the Firemaking requirement for Kourend & Kebos",
+			position = 44,
+			section = regionKourend
+	)
+	default boolean KourendFiremaking()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+			keyName = "KourendWoodcutting",
+			name = "Woodcutting (Level 65)",
+			description = "Check if you have the Woodcutting requirement for Kourend & Kebos",
+			position = 45,
+			section = regionKourend
+	)
+	default boolean KourendWoodcutting()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+			keyName = "KourendFletching",
+			name = "Fletching (Level 45",
+			description = "Check if you have the Fletching requirement for Kourend & Kebos",
+			position = 46,
+			section = regionKourend
+	)
+	default boolean KourendFletching()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+			keyName = "KourendConstruction",
+			name = "Construction (Level 40)",
+			description = "Check if you have the Construction requirement for Kourend & Kebos",
+			position = 47,
+			section = regionKourend
+	)
+	default boolean KourendConstruction()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+			keyName = "AsgarniaMiningDoom",
+			name = "Doom Mining (Level 80)",
+			description = "Check if you have the Mining (x2) requirement for Asgarnia (in case Asgarnia belongs to the last two Tier 1 Regions",
+			position = 48,
+			section = regionAsgarnia
+	)
+	default boolean AsgarniaMiningDoom()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+			keyName = "AsgarniaSmithingdoom",
+			name = "Doom Smithing (Level 70)",
+			description = "Check if you have the Smithing (x2) requirement for Asgarnia (in case Asgarnia belongs to the last two Tier 1 Regions",
+			position = 49,
+			section = regionAsgarnia
+	)
+	default boolean AsgarniaSmithingDoom()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+			keyName = "AsgarniaCombatdoom",
+			name = "Doom Combat (Level 90)",
+			description = "Check if you have the Combat (x2) requirement for Asgarnia (in case Asgarnia belongs to the last two Tier 1 Regions",
+			position = 50,
+			section = regionAsgarnia
+	)
+	default boolean AsgarniaCombatDoom()
+	{
+		return false;
+	}
+
+
+
+	@ConfigItem(
+			keyName = "MorytaniaQuest",
+			name = "Priest in Peril",
+			description = "Check if you have the Quest requirement for Morytania",
+			position = 51,
+			section = regionMorytania
+	)
+	default boolean MorytaniaQuest()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+			keyName = "MorytaniaPrayer",
+			name = "Prayer (Level 35)",
+			description = "Check if you have the Prayer requirement for Morytania",
+			position = 52,
+			section = regionMorytania
+	)
+	default boolean MorytaniaPrayer()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+			keyName = "MorytaniaAgility",
+			name = "Agility (Level 40)",
+			description = "Check if you have the Agility requirement for Morytania",
+			position = 53,
+			section = regionMorytania
+	)
+	default boolean MorytaniaAgility()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+			keyName = "MorytaniaPrayerdoom",
+			name = "Doom Prayer (Level 70)",
+			description = "Check if you have the Prayer (x2) requirement for Morytania (in case Morytania belongs to the last two Tier 1 Regions",
+			position = 54,
+			section = regionMorytania
+	)
+	default boolean MorytaniaPrayerDoom()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+			keyName = "MorytaniaAgilitydoom",
+			name = "Doom Agility (Level 80)",
+			description = "Check if you have the Agility (x2) requirement for Morytania (in case Morytania belongs to the last two Tier 1 Regions",
+			position = 55,
+			section = regionMorytania
+	)
+	default boolean MorytaniaAgilityDoom()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+			keyName = "WildernessAsgarnia",
+			name = "Falador Hard Diary",
+			description = "Check if you have done this diary for unlocking Wilderness",
+			position = 56,
+			section = regionWilderness
+	)
+	default boolean WildernessAsgarnia()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+			keyName = "WildernessDesert",
+			name = "Desert Hard Diary",
+			description = "Check if you have done this diary for unlocking Wilderness",
+			position = 57,
+			section = regionWilderness
+	)
+	default boolean WildernessDesert()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+			keyName = "WildernessKandarin",
+			name = "Kandarin & Ardougne Hard Diary",
+			description = "Check if you have done this diary for unlocking Wilderness",
+			position = 57,
+			section = regionWilderness
+	)
+	default boolean WildernessKandarin()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+			keyName = "WildernessMistalin",
+			name = "Varrock & Lumbridge Hard Diary",
+			description = "Check if you have done this diary for unlocking Wilderness",
+			position = 58,
+			section = regionWilderness
+	)
+	default boolean WildernessMisthalin()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+			keyName = "WildernessFremennik",
+			name = "Fremennik Hard Diary",
+			description = "Check if you have done this diary for unlocking Wilderness",
+			position = 59,
+			section = regionWilderness
+	)
+	default boolean WildernessFremennik()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+			keyName = "WildernessTiranwnn",
+			name = "Western Provinces Hard Diary",
+			description = "Check if you have done this diary for unlocking Wilderness",
+			position = 60,
+			section = regionWilderness
+	)
+	default boolean WildernessTiranwnn()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+			keyName = "WildernessMorytania",
+			name = "Morytania Hard Diary",
+			description = "Check if you have done this diary for unlocking Wilderness",
+			position = 61,
+			section = regionWilderness
+	)
+	default boolean WildernessMorytania()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+			keyName = "WildernessKourend",
+			name = "Kourend & Kebos Hard Diary",
+			description = "Check if you have done this diary for unlocking Wilderness",
+			position = 62,
+			section = regionWilderness
+	)
+	default boolean WildernessKourend()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+			keyName = "UtilitySpellBook",
+			name = "Spellbook Unlock",
+			description = "Completion of 'Temple of the Eye'",
+			position = 63,
+			section = utilityUnlocks
+	)
+	default boolean UtilitySpellBook()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+			keyName = "UtilityPrayerBook",
+			name = "Prayerbook Unlock",
+			description = "Completion of 'Holy Grail', 'Restless Ghost' & 'His Faithful Servants'",
+			position = 64,
+			section = utilityUnlocks
+	)
+	default boolean UtilityPrayerBook()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+			keyName = "UtilityPersonalBank",
+			name = "Personal Bank Unlock",
+			description = "Obtain a POH, and carry an inventory of 250K G.E price after POH (only tradables)",
+			position = 65,
+			section = utilityUnlocks
+	)
+	default boolean UtilityPersonalBank()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+			keyName = "UtilityGroupBank",
+			name = "Group Bank Unlock",
+			description = "Everyone has Personal Bank unlocked, Shield of Arrav Completed, Total of 150+",
+			position = 66,
+			section = utilityUnlocks
+	)
+	default boolean UtilityGroupBank()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+			keyName = "UtilityTOA",
+			name = "Tombs of Amascut Unlock",
+			description = "Obtain one of these: 5x Tome of Water, 3x Pharaoh Sceptre or 1x Tempoross Pet",
+			position = 67,
+			section = utilityUnlocks
+	)
+	default boolean UtilityTOA()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+			keyName = "UtilityTOB",
+			name = "Theatre of Blood Unlock",
+			description = "Obtain one of these: 1x Soulreaper Axe, 1x Voidwaker, 1x Slayer Boss pet",
+			position = 68,
+			section = utilityUnlocks
+	)
+	default boolean UtilityTOB()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+			keyName = "UtilityCOX",
+			name = "Chambers of Xeric Unlock",
+			description = "Obtain one of these: 5x Tome of Fire, 3x Dragon Warhammer or 1x Wintertodt pet",
+			position = 69,
+			section = utilityUnlocks
+	)
+	default boolean UtilityCOX()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+			keyName = "GearMainHand",
+			name = "Main Hand Slot",
+			description = "Obtain one of these: 5x Tome of Fire, 3x Dragon Warhammer or 1x Wintertodt pet",
+			position = 70,
+			section = gearSlots
+	)
+	default boolean GearMainHand()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+			keyName = "GearAmmo",
+			name = "Ammo Slot",
+			description = "Obtain one of these: 5x Tome of Fire, 3x Dragon Warhammer or 1x Wintertodt pet",
+			position = 71,
+			section = gearSlots
+	)
+	default boolean GearAmmo()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+			keyName = "GearHelm",
+			name = "Helm Slot",
+			description = "Obtain one of these: 5x Tome of Fire, 3x Dragon Warhammer or 1x Wintertodt pet",
+			position = 72,
+			section = gearSlots
+	)
+	default boolean GearHelm()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+			keyName = "GearAmulet",
+			name = "Amulet Slot",
+			description = "Obtain one of these: 5x Tome of Fire, 3x Dragon Warhammer or 1x Wintertodt pet",
+			position = 73,
+			section = gearSlots
+	)
+	default boolean GearAmulet()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+			keyName = "GearCape",
+			name = "Cape Slot",
+			description = "Obtain one of these: 5x Tome of Fire, 3x Dragon Warhammer or 1x Wintertodt pet",
+			position = 74,
+			section = gearSlots
+	)
+	default boolean GearCape()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+			keyName = "GearBody",
+			name = "Body Slot",
+			description = "Obtain one of these: 5x Tome of Fire, 3x Dragon Warhammer or 1x Wintertodt pet",
+			position = 75,
+			section = gearSlots
+	)
+	default boolean GearBody()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+			keyName = "GearOffHand",
+			name = "Off-Hand Slot",
+			description = "Obtain one of these: 5x Tome of Fire, 3x Dragon Warhammer or 1x Wintertodt pet",
+			position = 76,
+			section = gearSlots
+	)
+	default boolean GearOffHand()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+			keyName = "GearLegs",
+			name = "Legs Slot",
+			description = "Obtain one of these: 5x Tome of Fire, 3x Dragon Warhammer or 1x Wintertodt pet",
+			position = 77,
+			section = gearSlots
+	)
+	default boolean GearLegs()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+			keyName = "GearBoots",
+			name = "Boots Slot",
+			description = "Obtain one of these: 5x Tome of Fire, 3x Dragon Warhammer or 1x Wintertodt pet",
+			position = 78,
+			section = gearSlots
+	)
+	default boolean GearBoots()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+			keyName = "GearGloves",
+			name = "Gloves Slot",
+			description = "Obtain one of these: 5x Tome of Fire, 3x Dragon Warhammer or 1x Wintertodt pet",
+			position = 79,
+			section = gearSlots
+	)
+	default boolean GearGloves()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+			keyName = "GearRing",
+			name = "Ring Slot",
+			description = "Obtain one of these: 5x Tome of Fire, 3x Dragon Warhammer or 1x Wintertodt pet",
+			position = 80,
+			section = gearSlots
+	)
+	default boolean GearRing()
+	{
+		return false;
+	}
+
+
+
+
+
+
+
+
+
+
 
 
 

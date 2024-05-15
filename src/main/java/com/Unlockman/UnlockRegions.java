@@ -111,12 +111,28 @@ public class UnlockRegions
                 List<String> unlockedRegionstwo = StringToList(tiranwnn);
                 setRegions(unlockedRegionstwo, UnlockRegionTypes.UNLOCKED);
             }
+
+            if ((config.DesertFishing() || config.DesertFishingDoom()) && (config.DesertRunecraft() || config.DesertRunecraftDoom()) && (config.DesertCooking() || config.DesertCookingDoom()))
+            {
+                if (config.FremennikMagic() && config.FremennikFishing() && config.FremennikCombat())
+                {
+                    String fremennik = "8253, 8509, 8252, 8508, 8763, 9276, 9275, 9532, 9531, 9023, 9790, 10045, 10044, 10043, 10042," +
+                            "10041, 10040, 10301, 10300, 10299, 10298, 10297, 10296, 10559, 10558, 10557, 10556, 10555, 10554, 10553," +
+                            "10552, 10812, 10811, 10810, 10809, 10808, 11069, 11068, 11067, 11066, 11065, 11064, 11326, 11325, 11324," +
+                            "11581, 11580";
+                    List<String> unlockedRegionsthree = StringToList(fremennik);
+                    setRegions(unlockedRegionsthree, UnlockRegionTypes.UNLOCKED);
+                }
+            }
+
+
         }
 
-        if (config.AsgarniaMining() && config.AsgarniaSmithing() && config.AsgarniaCombat())
+        if ((config.AsgarniaMining() || config.AsgarniaMiningDoom()) && (config.AsgarniaSmithing() || config.AsgarniaSmithingDoom()) && (config.AsgarniaCombat() || config.AsgarniaCombatDoom()))
         {
             String asgarnia = "11063, 11319, 11060, 11316, 11575, 11574, 11573, 11572, 11571, 11570, 11830, 11829," +
-                    "11828, 11827, 11826, 11825, 11824, 12086, 12085, 12084, 12083, 12082, 12081, 10537, 10536";
+                    "11828, 11827, 11826, 11825, 11824, 12086, 12085, 12084, 12083, 12082, 12081, 10537, 10536, 11320, 11321, 11322," +
+                    "11323, 11579, 11578, 11577, 11576";
             List<String> unlockedRegions = StringToList(asgarnia);
             setRegions(unlockedRegions, UnlockRegionTypes.UNLOCKED);
         }
@@ -126,6 +142,60 @@ public class UnlockRegions
             String karamja = "10802, 10801, 11058, 11057, 11056, 11055, 11054, 11053, 11315, 11314, 11313," +
                     "11312, 11311, 11310, 11309, 11569, 11568, 11567, 11566, 11565, 11823, 11822, 11821";
             List<String> unlockedRegions = StringToList(karamja);
+            setRegions(unlockedRegions, UnlockRegionTypes.UNLOCKED);
+        }
+
+        if (config.KaramjaAccess())
+        {
+            String karamja = "10802, 10801, 11058, 11057, 11056, 11055, 11054, 11053, 11315, 11314, 11313," +
+                    "11312, 11311, 11310, 11309, 11569, 11568, 11567, 11566, 11565, 11823, 11822, 11821";
+            List<String> unlockedRegions = StringToList(karamja);
+            setRegions(unlockedRegions, UnlockRegionTypes.UNLOCKED);
+        }
+
+        if(config.VarlamoreQuest() && (config.VarlamoreHunter() || config.VarlamoreHunterDoom()) && (config.VarlamoreThieving() || config.VarlamoreThievingDoom()))
+        {
+            String varlamore = "4916, 4915, 4914, 4913, 4912, 4911, 4910, 4909, 4908, 5164, 5165, 5166, 5167, 5168, 5169, 5170, 5171, 5172," +
+                    "5428, 5427, 5426, 5425, 5424, 5423, 5422, 5421, 5420, 5676, 5677, 5678, 5679, 5680, 5681, 5682, 5683, 5684, 5940, 5939," +
+                    "5938, 5937, 5938, 5937, 5936, 5935, 5934, 5933, 6189, 6190, 6191, 6192, 6193, 6194, 6195, 6451, 6450, 6449, 6448, 6447," +
+                    "6446, 6445, 6701, 6702, 6703, 6704, 6705, 6706, 6707, 6961, 6960, 6959, 6958, 6957 7215, 7216, 7217, 7472";
+            List<String> unlockedRegions = StringToList(varlamore);
+            setRegions(unlockedRegions, UnlockRegionTypes.UNLOCKED);
+
+            if ((config.AsgarniaMining() || config.AsgarniaMiningDoom()) && (config.AsgarniaSmithing() || config.AsgarniaSmithingDoom()) && (config.AsgarniaCombat() || config.AsgarniaCombatDoom()))
+            {
+                if(config.KourendQuest() && config.KourendConstruction() && config.KourendFiremaking() && config.KourendFletching() && config.KourendWoodcutting())
+                {
+                    String kourend = "4405, 4404, 4403, 4659, 4660, 4661, 4662, 4663, 4664, 4665, 4666, 4667 4923, 4922, 4921, 4920, 4919," +
+                            "4918, 4917, 5173, 5174, 5175, 5176, 5177, 5178, 5179, 5180, 5435, 5434, 5433, 5432, 5431, 5430, 5429, 5685, 5686, 5687, 5688," +
+                            "5689, 5690, 5691, 5692, 5693, 5950, 5949, 5948, 5947, 5946, 5945, 5944, 5943, 5942, 5941, 6197, 6198, 6199, 6200, 6201, 6202," +
+                            "6203, 6204, 6205, 6206, 6463, 6462, 6461, 6460, 6459, 6458, 6457, 6456, 6455, 6454, 6453, 6709, 6710, 6711, 6712, 6713, " +
+                            "6714, 6715, 6716, 6717, 6718, 6719, 6974, 6973, 6972, 6971, 6970, 6969, 6968 6967, 6966, 6965, 7221, 7220, 7222, 7223, " +
+                            "7224, 7225, 7226, 7227, 7228, 7229, 7485, 7484, 7479, 7478";
+                    List<String> unlockedRegionstwo = StringToList(kourend);
+                    setRegions(unlockedRegionstwo, UnlockRegionTypes.UNLOCKED);
+
+                }
+            }
+        }
+
+        if(config.MorytaniaQuest() && (config.MorytaniaAgility() || config.MorytaniaAgilityDoom()) && (config.MorytaniaPrayer() || config.MorytaniaPrayerDoom()))
+        {
+            String morytania = "14393, 13624, 13623, 13622, 13621, 13620, 13619, 13618, 13879, 13878, 13877, 13876, 13875, 13874, 13873," +
+                    "14135, 14134, 14133, 14132, 14131, 14130, 14129, 14391, 14390, 14389, 14388, 14387, 14386, 14385, 14647, 14646, 14645," +
+                    "14644, 14643, 14642, 14641, 15159, 14901, 14900, 14899, 14898, 14897, 14639, 14638, 14637, 14894, 14895, 15151, 15150, 15149, 15148, 15407," +
+                    "15406, 15405";
+            List<String> unlockedRegions = StringToList(morytania);
+            setRegions(unlockedRegions, UnlockRegionTypes.UNLOCKED);
+        }
+
+        if(config.WildernessMorytania() && config.WildernessTiranwnn() && config.WildernessAsgarnia() && config.WildernessDesert() && config.WildernessFremennik() && config.WildernessKandarin() && config.WildernessKourend() && config.WildernessMisthalin())
+        {
+            String wilderness = "11831, 11832, 11833, 11834, 11835, 11836, 11837, 12087, 12088, 12089, 12090, 12091, 12092, 12093, 12343, 12344," +
+                    "12345, 12346, 12347, 12348, 12349, 12599, 12600, 12601, 12602, 12603, 12604, 12605, 12855, 12856, 12857, 12858, 12859, 12860," +
+                    "12861, 13111, 13112, 13113, 13114, 13115, 13116, 13117, 13367, 13368, 13369, 13370, 13371, 13372, 13373, 13374, 13375, 13376," +
+                    "13632, 13631, 13630, 13886, 13887, 13888";
+            List<String> unlockedRegions = StringToList(wilderness);
             setRegions(unlockedRegions, UnlockRegionTypes.UNLOCKED);
         }
     }
